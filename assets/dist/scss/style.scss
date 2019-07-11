@@ -1,6 +1,5 @@
 @import "libs/fonts";
 @import "libs/fontello";
-@import "libs/header";
 @import "libs/footer";
 @import "libs/popups";
 
@@ -68,6 +67,7 @@ button{
   padding: 15px 20px;
   color: #fff;
   font-size: 14px;
+  border: none;
   &:hover{
     background-image: linear-gradient(to bottom, #75acf6 0%, #3523ac 100%);
   }
