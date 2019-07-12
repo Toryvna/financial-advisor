@@ -74,14 +74,18 @@ $(document).ready(function(){
     } 
     function checkQuestionNext(item){ //ф-я для переключения вопросов при шагк вперёд
         var currentItem = $(item).parent().parent().find('.active'); 
-        if(currentItem.hasClass('first-question')){ //если это был первый впрос
-            $('.back-question').show(); //показываем кнопку назад
-        }else if(currentItem.hasClass('last-question')){ //если последний вопрос
-            $('.next-question').hide(); //скрываем кнопку Далее
-            $('.goToAccount').show(); //показываем кнопку перехода в ЛК
-        }
 
-        currentItem.removeClass('active').next().addClass('active');
+        if(currentItem.find('input').val()!=""){
+            if(currentItem.hasClass('first-question')){ //если это был первый впрос
+                $('.back-question').show(); 
+            }else if(currentItem.hasClass('last-question')){ //если последний вопрос
+                $('.next-question').hide(); 
+                $('.goToAccount').show(); 
+                $('.rememText').show();
+            }
+            currentItem.removeClass('active').next().addClass('active');
+            progressBar.Next();
+        }
     }
     function checkQuestioBack(item){ //ф-я для переключения вопросов при шагк назад
         var currentItem = $(item).parent().parent().find('.active');
@@ -91,8 +95,10 @@ $(document).ready(function(){
         } else if(currentItem.hasClass('result')){ //если это был результат теста
             $('.next-question').show(); //показываем кнопку Далее
             $('.goToAccount').hide(); //скрываем кнопку перехода в ЛЧ
+            $('.rememText').hide();
         }
         currentItem.removeClass('active').prev().addClass('active');
+        progressBar.Back(); 
     }
 
     function getInfo(){
@@ -137,7 +143,7 @@ $(document).ready(function(){
         }
 
         var results = ageNum + maritalStatus + dependentMembers + financRespons + education + employment + position + healthProblems + moneyFor + withoutMoneyNum + costToIncomeNum;
-        console.log(ageNum, maritalStatus, dependentMembers, financRespons, education, employment, position, healthProblems, moneyFor, withoutMoneyNum, costToIncomeNum, results);
+        // console.log(ageNum, maritalStatus, dependentMembers, financRespons, education, employment, position, healthProblems, moneyFor, withoutMoneyNum, costToIncomeNum, results);
 
         $( "#resultsTable li" ).each(function() {
             if(results == $(this).data('min') || results == $(this).data('max')){
@@ -152,12 +158,10 @@ $(document).ready(function(){
     }
     
     $(".questions .back-question").on('click', function(){
-        progressBar.Back(); 
         checkQuestioBack(event.target); 
         counter();
     });
     $(".questions .next-question").on('click', function(){
-        progressBar.Next();
         checkQuestionNext(event.target);
         counter();
         getInfo();
