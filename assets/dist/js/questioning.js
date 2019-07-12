@@ -136,21 +136,20 @@ $(document).ready(function(){
         costToIncome = $("#costToIncome").val();
         if(costToIncome < 60){
             costToIncomeNum = 3;
-        }else if(costToIncome > 59 && withoutMoney < 81){
+        }else if(costToIncome > 59 && costToIncome < 81){
             costToIncomeNum = 2;
         }else if (costToIncome > 80){
             costToIncomeNum = 1;
         }
 
         var results = ageNum + maritalStatus + dependentMembers + financRespons + education + employment + position + healthProblems + moneyFor + withoutMoneyNum + costToIncomeNum;
-        // console.log(ageNum, maritalStatus, dependentMembers, financRespons, education, employment, position, healthProblems, moneyFor, withoutMoneyNum, costToIncomeNum, results);
+        console.log(ageNum, maritalStatus, dependentMembers, financRespons, education, employment, position, healthProblems, moneyFor, withoutMoneyNum, costToIncomeNum, results);
 
         $( "#resultsTable li" ).each(function() {
-            if(results == $(this).data('min') || results == $(this).data('max')){
+            if(results >= $(this).data('min') && results <= $(this).data('max')){
                 num = $(this).data('num');
-                text = $(this).data('text')
-                $('.result__block .num').text(num);
-                $('.result__block .name').text(text);
+                color = $(this).data('color');
+                $('.result__block .num').text(num).css('color', color);
             }
             
         });

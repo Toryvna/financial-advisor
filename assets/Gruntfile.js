@@ -23,7 +23,9 @@ grunt.initConfig({
 				'../markup/js/jquery.min.js': ['dist/js/plugin/jquery.js'],
 				'../markup/js/script.min.js': ['dist/js/script.js'],
 				'../markup/js/home.min.js': ['dist/js/home.js'],
-				'../markup/js/questioning.min.js': ['dist/js/questioning.js']
+				'../markup/js/questioning.min.js': ['dist/js/questioning.js'],
+				'../markup/js/user-account.min.js': ['dist/js/user-account.js']
+				 
 				
 			}
 		}
@@ -86,7 +88,9 @@ grunt.initConfig({
                     layout: {
 						header: '<%= fixturesPath %>/templates/header.html',
                     	footer: '<%= fixturesPath %>/templates/footer.html',
-                    	popups: '<%= fixturesPath %>/templates/popups.html'
+						popups: '<%= fixturesPath %>/templates/popups.html',
+						user_header: '<%= fixturesPath %>/templates/user_header.html',
+						userAcc_sidebar: '<%= fixturesPath %>/templates/userAcc-sidebar.html',
 					}
                 },
             }
