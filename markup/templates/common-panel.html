@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Общая панель</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/logo.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/user-account.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__wrap">
+            <div class="leftBlk">
+                <button class="toggle-menu">
+                    <span class="sandwich">
+                    <span class="sw-topper"></span>
+                    <span class="sw-bottom"></span>
+                    <span class="sw-footer"></span>
+                    </span>
+                </button>
+                <a class="header__logo" href="index.html">
+                    <img src="../img/logo.png" alt="logotype">
+                </a>
+            </div>
+            <div class="header__user">
+                <a href="user-account.html" class="userLink">
+                    <div class="avatar">
+                        <img src="../img/user.png" alt="user">
+                    </div>
+                    <p>Адам Смит</p>
+                </a>
+                <a href="javascript:void(0)">Выйти</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <aside class="sidebar">
+            <div class="closeSidebar"></div>
+            <nav>
+                <ul>
+                    <li class="active goals">
+                        <a href="user-account.html">Мои цели</a>
+                    </li>
+                    <li class="assets-liabilities">
+                        <a href="assets-liabilities.html">Активы и пассивы</a>
+                    </li>
+                    <li class="financial-flow">
+                        <a href="Income-expenses.html">Финансовый поток</a>
+                    </li>
+                    <li class="portfolio">
+                        <a href="portfolio.html">Мой портфель</a>
+                    </li>
+                    <li class="control">
+                        <a href="control.html">Управление</a>
+                    </li>
+                    <li class="common">
+                        <a href="common-panel.html">Общая панель</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="content">
+
+            <div class="content__blk">
+                <div class="content__blk_heading">
+                    <h2>Графики потенциального дохода, затрат и остатка <span class="tooltip">?</span></h2>
+                    <div class="tooltip_hidden">
+                        <div class="close-tooltip">x</div>
+                        <p>Этот график показывает Ваш потенциальный доход, если Вы будете дисциплинированно откладывать сумму, которую проанализировали на предыдущем этапе (зеленая линия), а также остаток от этого дохода, который Вы получите, если будете
+                            реализовывать свои финансовые цели (красная линия). Важно следить, чтобы остаток не уходил ниже нуля, ведь это значит, что у Вас закончились средства.
+                        </p>
+                    </div>
+                </div>
+                <div class="content__blk_body">
+                    <img src="../img/graph8.jpg" alt="">
+                </div>
+            </div>
+            <div class="content__blk">
+                <div class="content__blk_heading">
+                    <h2>Балансировка целевых долей портфеля <span class="tooltip">?</span></h2>
+                    <div class="tooltip_hidden">
+                        <div class="close-tooltip">x</div>
+                        <p>Балансировка и усреднение по времени являются одними из базовых принципов снижения рисков Вашего портфеля. Изменение во времени внешних условий и более яркое поведение одной из корзин не должно приводить к дестабилизации всего
+                            портфеля и достижению конечных целей.</p>
+                        <p>Здесь Вы увидите, в какой момент времени система предложит Вам сделать перераспределение инвестиций между корзинами, чтобы повысить устойчивость всего портфеля.</p>
+                    </div>
+                </div>
+                <div class="content__blk_body">
+                    <div class="table_scroll">
+                        <table>
+                            <tr>
+                                <th>
+                                    <p>Корзина</p>
+                                </th>
+                                <th>
+                                    <p>Недвижимость</p>
+                                </th>
+                                <th>
+                                    <p>Облигации</p>
+                                </th>
+                                <th>
+                                    <p>Акции</p>
+                                </th>
+                                <th>
+                                    <p>Название 4</p>
+                                </th>
+                                <th>
+                                    <p>Название 5</p>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Актуальные доли портфеля</p>
+                                </td>
+                                <td>
+                                    <p>28 %</p>
+                                </td>
+                                <td>
+                                    <p>25 %</p>
+                                </td>
+                                <td>
+                                    <p>40 %</p>
+                                </td>
+                                <td>
+                                    <p>5 %</p>
+                                </td>
+                                <td>
+                                    <p>2 %</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p>Рекомендации по изменению</p>
+                                </td>
+                                <td>
+                                    <p>-18 %</p>
+                                </td>
+                                <td>
+                                    <p>0 %</p>
+                                </td>
+                                <td>
+                                    <p>0 %</p>
+                                </td>
+                                <td>
+                                    <p>+10 %</p>
+                                </td>
+                                <td>
+                                    <p>+8 %</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <img src="../img/graph9.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="content__wrap">
+                <div class="content__blk">
+                    <div class="content__blk_heading">
+                        <h2>График доходов и расходов за год<span class="tooltip">?</span></h2>
+                        <div class="tooltip_hidden">
+                            <div class="close-tooltip">x</div>
+                            <p>Этот график показывает, как меняются статьи доходов и расходов в течение года. Вы сможете увидеть, имеются ли месяцы, когда Вы можете получить неожиданную просадку, или месяцы, когда Вы можете сформировать основной инвестиционный
+                                капитал.</p>
+                        </div>
+                    </div>
+                    <div class="content__blk_body">
+                        <img src="../img/graph5.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="content__blk">
+                    <div class="content__blk_heading">
+                        <h2>График доходов и расходов за год<span class="tooltip">?</span></h2>
+                        <div class="tooltip_hidden">
+                            <div class="close-tooltip">x</div>
+                            <p>Этот график показывает, какой финансовый баланс Вы имеете в среднем в год, чтобы на дальнейших шагах планировать свой инвестиционный портфель. </p>
+                        </div>
+                    </div>
+                    <div class="content__blk_body">
+                        <img src="../img/graph6.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <p>Copyright © 2019 Financial advisor. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/script.min.js"></script>
+    <script src="../js/user-account.min.js"></script>
+</body>
+
+</html>
