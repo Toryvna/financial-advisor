@@ -2,6 +2,45 @@
 @import "libs/flexbox";
 
 
+@-webkit-keyframes spin_delay {
+    0%{
+        -webkit-transform: rotate3d(0, 0, 1, 360deg);
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+    5%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    100%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+      
+  }
+  
+  @keyframes spin_delay {
+    0%{
+        -webkit-transform: rotate3d(0, 0, 1, -360deg);
+        transform: rotate3d(0, 0, 1, -360deg);
+    }
+    5%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    100%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate3d(0, 0, 1, 0deg);
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+  }
+
 .heading{
     &.white{
         h2{
@@ -100,9 +139,13 @@
         }
     }
     &__img{
+        position: relative;
         img{
             max-width: 100%;
             max-height: 100%;
+            &.desk-img{
+                display: none;
+            }
         }
     }
 }
@@ -376,6 +419,22 @@
         }
         &__img{
             width: 50%;
+            background-image: url('../img/banner-icon.png');
+            background-size: 100% 100%;
+            img{
+                max-width: 85%;
+                -webkit-animation: spin_delay 3s linear infinite;
+                animation: spin_delay 3s linear infinite;
+                position: absolute;
+                bottom: -15px;
+                left: 71px;
+                &.mob-img{
+                    display: none;
+                }
+                &.desk-img{
+                    display: block;
+                }
+            }
         }
         h2{
             font-size: 28px;

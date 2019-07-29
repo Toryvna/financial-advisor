@@ -11,6 +11,37 @@
 </head>
 
 <body>
+    <!-- popups -->
+    <!-- .closeBtn - закрывает попап -->
+    <!-- .open-* - открывает попап -->
+
+    <div class="overlay-signIn overlayPopup">
+        <div class="close"></div>
+        <div class="signIn__popup">
+            <span class="close-popup closeBtn"></span>
+            <div class="content">
+                <form>
+                    <div class="form-input">
+                        <span class="icon"><i class="icon-user"></i></span>
+                        <input type="text" placeholder="Введите Ваш имя" required>
+                    </div>
+                    <div class="form-input">
+                        <span class="icon"><i class="icon-mail"></i></span>
+                        <input type="email" placeholder="Введите Ваш e-mail" required>
+                    </div>
+                    <div class="form-input">
+                        <span class="icon"><img src="../img/lock.png" alt=""></span>
+                        <input type="password" placeholder="Введите Ваш пароль" required>
+                    </div>
+                    <div class="form-buttons">
+                        <button class="btn blueBtn">Войти</button>
+                        <a href="#signId" class="btn blueBtn scrollLink">Зарегистрироваться</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container">
             <a class="header__logo" href="index.html">
@@ -110,21 +141,42 @@
                 </div>
                 <div class="question question-4">
                     <h2>Ваша финансовая ответственность в семье</h2>
-                    <div class="radio-btns" id="financRespons">
+                    <div class="radio-imgs" id="financRespons">
                         <label class="wrap">
-                            <input type="radio" checked="checked" name="question-4" value="2">
-                            <span class="checkmark"></span>
-                            <span class="title">Являюсь единственным источником дохода</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-employee"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" checked="checked" name="question-4" value="1">
+                                
+                                <span class="title"><span class="checkmark"></span>Являюсь единственным источником дохода</span>
+                            </span>
                         </label>
                         <label class="wrap">
-                            <input type="radio" name="question-4" value="3">
-                            <span class="checkmark"></span>
-                            <span class="title">Участвую в совокупном доходе</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-affiliate"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" name="question-4" value="3">
+                                
+                                <span class="title"><span class="checkmark"></span>Участвую в совокупном доходе</span>
+                            </span>
                         </label>
                         <label class="wrap">
-                            <input type="radio" name="question-4" value="1">
-                            <span class="checkmark"></span>
-                            <span class="title">Не имею дохода</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-case"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" name="question-4" value="4">
+                                
+                                <span class="title"><span class="checkmark"></span>Не имею дохода</span>
+                            </span>
                         </label>
                     </div>
                 </div>
@@ -290,21 +342,43 @@
                 <div class="question question-8">
                     <h2>Имеете ли Вы серьезные или хронические
                             проблемы со здоровьем?</h2>
-                    <div class="radio-btns" id="healthProblems">
+                    <div class="radio-imgs" id="healthProblems">
+
                         <label class="wrap">
-                            <input type="radio" checked="checked" name="question-8" value="3">
-                            <span class="checkmark"></span>
-                            <span class="title">Отсутствуют</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-biceps"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" checked="checked" name="question-8" value="1">
+                                
+                                <span class="title"><span class="checkmark"></span>Отсутствуют</span>
+                            </span>
                         </label>
                         <label class="wrap">
-                            <input type="radio" name="question-8" value="3">
-                            <span class="checkmark"></span>
-                            <span class="title">Не угрожают трудоспособности</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-plaster"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" name="question-8" value="2">
+                                
+                                <span class="title"><span class="checkmark"></span>Не угрожают трудоспособности</span>
+                            </span>
                         </label>
                         <label class="wrap">
-                            <input type="radio" name="question-8" value="1">
-                            <span class="checkmark"></span>
-                            <span class="title">Не угрожают жизни</span>
+                            <span class="img">
+                                <span class="icon">
+                                    <i class="icon-heart"></i>
+                                </span>
+                            </span>
+                            <span class="flex">
+                                <input type="radio" name="question-8" value="3">
+                                
+                                <span class="title"><span class="checkmark"></span>Не угрожают жизни</span>
+                            </span>
                         </label>
                     </div>
                 </div>
@@ -391,7 +465,7 @@
                     <a href="javascript:void(0)" class="back-question btn"><i class="icon-left"></i>Назад</a>
                     <a href="javascript:void(0)" class="blueBtn next-question btn">Далее<i class="icon-right"></i></a>
 
-                    <button class="blueBtn btn goToAccount">Перейти в кабинет<i class="icon-right"></i></button>
+                    <a href="javascript:void(0)" class="blueBtn btn goToAccount open-signIn">Зарегистироваться<i class="icon-right"></i></a>
                 </div>
             </form>
             <p class="rememText">Вы всегда можете вернуться к вопросам риск-профиля в настройках своего профия при необоходимости внесения более актуальной информации</p>

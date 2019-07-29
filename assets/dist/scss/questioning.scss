@@ -252,6 +252,9 @@ body{
                         i{
                             font-size: 60px;
                             color: #fff;
+                            &.icon-case{
+                                font-size: 100px;
+                            }
                         }
                         img{
                             max-width: 100%;
