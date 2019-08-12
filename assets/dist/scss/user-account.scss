@@ -1,6 +1,7 @@
 @import "libs/flexbox";
 @import "libs/user_header";
 @import "libs/userAcc-sidebar";
+@import "libs/chartist";
 
 .wrapper{
     background-color: #f7f8fc;
@@ -557,6 +558,24 @@
                     color: #989797;
                     font-size: 12px;
                 }
+                .footnote{
+                    margin-top: 15px;
+                    li{
+                        margin-bottom: 15px;
+                        &:last-of-type{
+                            margin-bottom: 0;
+                        }
+                    }
+                    p{
+                        color: #616161;
+                        font-size: 12px;
+                    }
+                    span{
+                        color: #34268d;
+                        font-size: 18px;
+                        font-family: 'GothamPro-Bold';
+                    }
+                }
             }
             .tableRadio{
                 width: 750px;
@@ -881,6 +900,14 @@
                     &.toggle_body{
                         .table_scroll{
                             overflow: inherit;
+                        }
+                    }
+                    .footnote{
+                        margin-top: 0;
+                        margin-left: auto;
+                        display: table;
+                        li{
+                            margin-bottom: 5px;
                         }
                     }
                 }

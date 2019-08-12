@@ -21,10 +21,24 @@ grunt.initConfig({
 		dist: {
 			files: {
 				'../markup/js/jquery.min.js': ['dist/js/plugin/jquery.js'],
+				'../markup/js/chartist-plugin-axistitle.min.js': ['dist/js/plugin/chartist-plugin-axistitle.js'],
+				'../markup/js/chartist-plugin-legend.min.js': ['dist/js/plugin/chartist-plugin-legend.js'],
+				'../markup/js/chartist.min.js': ['dist/js/plugin/chartist.js'],
+
+
 				'../markup/js/script.min.js': ['dist/js/script.js'],
 				'../markup/js/home.min.js': ['dist/js/home.js'],
 				'../markup/js/questioning.min.js': ['dist/js/questioning.js'],
-				'../markup/js/user-account.min.js': ['dist/js/user-account.js']
+				'../markup/js/user-account.min.js': ['dist/js/user-account.js'],
+				'../markup/js/portfolio.min.js': ['dist/js/portfolio.js'],
+				'../markup/js/user-account-graph.min.js': ['dist/js/user-account-graph.js'],
+				'../markup/js/assets-liabilities.min.js': ['dist/js/assets-liabilities.js'],
+				'../markup/js/income-expenses.min.js': ['dist/js/income-expenses.js'],
+				'../markup/js/common-panel.min.js': ['dist/js/common-panel.js'],
+				
+				
+				
+				
 				 
 				
 			}
