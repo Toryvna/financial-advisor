@@ -214,9 +214,10 @@ $(document).ready(function(){
             [20, 30, 40, 5, 2],
         ]
     }, {
-        seriesBarDistance: 35,
+        seriesBarDistance: 10,
+        height: 250,
         axisX: {
-            offset: 20
+            offset: 90,
         },
         axisY: {
             offset: 35,
@@ -232,7 +233,7 @@ $(document).ready(function(){
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
-                        y: 30
+                        y: 40
                     },
                     textAnchor: "middle"
                 },
@@ -240,13 +241,20 @@ $(document).ready(function(){
                     axisTitle: "Целевая доля, %",
                     axisClass: "ct-axis-title",
                     offset: {
-                        x: 0,
+                        x: 10,
                         y: -3
                     },
                     flipTitle: false
                 }
             })
         ] 
-    });
+    },[
+        ['screen and (min-width: 768px)', {
+            seriesBarDistance: 35,
+            axisX: {
+                offset: 50,
+            }
+        }]
+    ]);
     
 });

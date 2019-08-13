@@ -35,11 +35,7 @@ grunt.initConfig({
 				'../markup/js/assets-liabilities.min.js': ['dist/js/assets-liabilities.js'],
 				'../markup/js/income-expenses.min.js': ['dist/js/income-expenses.js'],
 				'../markup/js/common-panel.min.js': ['dist/js/common-panel.js'],
-				
-				
-				
-				
-				 
+				'../markup/js/control.min.js': ['dist/js/control.js'],
 				
 			}
 		}

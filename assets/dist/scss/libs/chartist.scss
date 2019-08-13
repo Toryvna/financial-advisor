@@ -781,17 +781,53 @@
 }
 
 .graphView-7{
+  .ct-legend{
+      margin-top: 10px;
+      li{
+          color: #616161;
+          font-size: 14px;
+          position: relative;
+          margin-bottom: 10px;
+          display: table;
+          cursor: pointer;
+          &:last-of-type{
+              margin-bottom: 0;
+          }
+          &::before{
+              content: '';
+              width: 50px;
+              height: 10px; 
+              display: inline-block;
+              margin-right: 5px;
+          }
+          &.ct-series-0{
+              &::before{
+                  background-color: #c9cae6;
+              }
+          }
+          &.ct-series-1{
+              &::before{
+                  background-color: #1940ad;
+              }
+          }
+      }
+  }
   .ct-series-a {
       .ct-bar{
-          stroke-width: 35px;
+          stroke-width: 10px;
           stroke: #c9cae6;
       }
   }
   .ct-series-b {
       .ct-bar{
-          stroke-width: 35px;
+          stroke-width: 10px;
           stroke: #1940ad;
       }
+  }
+  .ct-axis-title{
+    &:last-of-type{
+      display: none;
+    }
   }
 }
 
@@ -824,6 +860,21 @@ svg.ct-chart-bar, svg.ct-chart-line{
     .ct-label.ct-label.ct-horizontal.ct-end{
       transform: inherit;
       justify-content: center;
+    }
+    .ct-series-a {
+        .ct-bar{
+            stroke-width: 35px;
+        }
+    }
+    .ct-series-b {
+        .ct-bar{
+            stroke-width: 35px;
+        }
+    }
+    .ct-axis-title{
+      &:last-of-type{
+        display: block;
+      }
     }
   }
 }
