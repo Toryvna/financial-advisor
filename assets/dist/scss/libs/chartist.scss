@@ -831,6 +831,52 @@
   }
 }
 
+.graphView-8{
+  &.v2{
+    .ct-series-b {
+      .ct-bar {
+        stroke: #fe5c5d;
+      }
+    }
+  }
+  .ct-series-a {
+      .ct-bar{
+          stroke-width: 33px;
+          opacity: 0;
+      }
+  }
+  .ct-series-b {
+      .ct-bar{
+          stroke-width: 33px;
+          stroke: #00bf6b;
+      }
+  }
+}
+
+.ct-goal-line {
+  stroke: #a8c2e2;
+  stroke-width: 1px;
+  stroke-dasharray: 4px;
+}
+.labelGraph{
+  color: #616161;
+  font-size: 14px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  i{
+    font-size: 30px;
+    color: #68707a;
+    width: 50px;
+    text-align: center;
+    margin-right: 5px;
+  }
+  span{
+    display: inline-block;
+    max-width: calc(100% - 55px);
+  }
+}
+
 
 .ct-axis-title{
     color: #616161;
@@ -875,6 +921,11 @@ svg.ct-chart-bar, svg.ct-chart-line{
       &:last-of-type{
         display: block;
       }
+    }
+  }
+  .graphView-8{
+    .ct-label{
+      font-size: 12px;
     }
   }
 }

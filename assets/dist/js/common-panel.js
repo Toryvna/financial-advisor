@@ -4,16 +4,16 @@ $(document).ready(function(){
         labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028'],
         series: [{
         name: 'series-1',
-        data: [0, 21, 34, 44, 60, 80, 100]
+            data: [0, 21, 34, 44, 60, 80, 100],
         }, {
         name: 'series-2',
-        data: [0, 15, 19, 30, 40, 50, 70, 80, 100]
+            data: [0, 15, 19, 30, 40, 50, 70, 80, 100]
         }, {
         name: 'series-3',
-        data: [null, 0, 10, 21, 24, 46, 60, 63, 70, 100]
+            data: [null, 0, 10, 21, 24, 46, 60, 63, 70, 100]
         }, {
         name: 'series-4',
-        data: [null, 0, 5, 15, 22, 41, 55, 58, 60, 85]
+            data: [null, 0, 5, 15, 22, 41, 55, 58, 60, 85]
         }],
     }, {
     fullWidth: true,
@@ -43,7 +43,8 @@ $(document).ready(function(){
     plugins: [
         Chartist.plugins.legend({
             legendNames: ['- потенциальный доход', '- остаток', '- затрати на цели', '- line4 '],
-            position: 'bottom'
+            position: 'bottom',
+            clickable: false
         }),
         Chartist.plugins.ctAxisTitle({
             axisX: {
@@ -64,6 +65,10 @@ $(document).ready(function(){
                 },
                 flipTitle: false
             }
+        }),
+        Chartist.plugins.ctGoalLine({
+          value: 40,
+          axis: 'x'
         })
     ] }, 
     [
@@ -82,7 +87,25 @@ $(document).ready(function(){
                 })
             ]
         }]
-    ]);
+    ])
+    .on('draw', function(context) {
+        if (context.type === 'line') {
+          context.group.append(new Chartist.Svg('image', {
+            height: 51,
+            width: 51,
+            x: 400 - 10, //value*10 (40*10), отнимаем 10, чтобы выровнять иконку
+            y: 10,
+            'xlink:href': '../img/graph-icon1.png'
+          }));
+        }
+    });
+      
+      
+      
+
+
+
+
     new Chartist.Line('#chart5', {
         labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
         series: [{

@@ -24,6 +24,9 @@ grunt.initConfig({
 				'../markup/js/chartist-plugin-axistitle.min.js': ['dist/js/plugin/chartist-plugin-axistitle.js'],
 				'../markup/js/chartist-plugin-legend.min.js': ['dist/js/plugin/chartist-plugin-legend.js'],
 				'../markup/js/chartist.min.js': ['dist/js/plugin/chartist.js'],
+				'../markup/js/chartist-goal-line.min.js': ['dist/js/plugin/chartist-goal-line.js'],
+				
+				
 
 
 				'../markup/js/script.min.js': ['dist/js/script.js'],
