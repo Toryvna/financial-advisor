@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    new Chartist.Line('#chart1', {
+    var chart = new Chartist.Line('#chart1', {
         labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028'],
         series: [{
         name: 'series-1',
@@ -87,24 +87,21 @@ $(document).ready(function(){
                 })
             ]
         }]
-    ])
-    .on('draw', function(context) {
-        if (context.type === 'line') {
-          context.group.append(new Chartist.Svg('image', {
+    ]);
+    //вставляем картинку
+    chart.on('created', function(context) {
+        var targetLineX = context.chartRect.x1 + (context.chartRect.width() / context.bounds.max * 40);
+        context.svg.elem('image', {
             height: 51,
             width: 51,
-            x: 400 - 10, //value*10 (40*10), отнимаем 10, чтобы выровнять иконку
-            y: 10,
+            x: targetLineX - 25, // отнимаем 25, чтобы выровнять картинку относительно линии
+            x2: targetLineX,
+            y1: context.chartRect.y1,
+            y2: context.chartRect.y2,
             'xlink:href': '../img/graph-icon1.png'
-          }));
-        }
+        });
     });
       
-      
-      
-
-
-
 
     new Chartist.Line('#chart5', {
         labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
