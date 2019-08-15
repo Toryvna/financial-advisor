@@ -1,11 +1,8 @@
 $(document).ready(function(){
 
     new Chartist.Bar('#chart8', {
-        labels: ['Защитная', 'Консервативная', 'Умерянная', 'Активная', 'Агрессивная'],
-        series: [
-            [10, 30, 40, 15, 10],
-            [20, 30, 40, 5, 2],
-        ]
+        labels: labels,
+        series: dataLine
     }, {
         seriesBarDistance: 10,
         height: 250,
@@ -17,12 +14,12 @@ $(document).ready(function(){
         },
         plugins: [
             Chartist.plugins.legend({
-                legendNames: ['- целевые доли портфеля', '- актуальные доли портфеля'],
+                legendNames: legendNames,
                 position: 'bottom'
             }),
             Chartist.plugins.ctAxisTitle({
                 axisX: {
-                    axisTitle: "Корзина",
+                    axisTitle: axisX,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
@@ -31,7 +28,7 @@ $(document).ready(function(){
                     textAnchor: "middle"
                 },
                 axisY: {
-                    axisTitle: "Целевая доля, %",
+                    axisTitle: axisY,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 10,

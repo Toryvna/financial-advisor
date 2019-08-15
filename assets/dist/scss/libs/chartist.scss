@@ -853,6 +853,14 @@
   }
 }
 
+.iconsGraph{
+  .ct-vertical {
+    ~ .ct-vertical {
+      stroke: none;
+    }
+  }
+}
+
 .ct-goal-line {
   stroke: #a8c2e2;
   stroke-width: 1px;

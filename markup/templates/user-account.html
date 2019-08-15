@@ -93,8 +93,9 @@
                 </div>
                 <div class="content__blk_body withGraph">
                     <div class="ct-chart graphView-2" id="chart2"></div>
+                    <div class="ct-chart iconsGraph" id="chart3"></div>
                     <!-- <img src="../img/graph1.jpg" alt="graph1"> -->
-                    <img src="../img/graph2.jpg" alt="graph2">
+                    <!-- <img src="../img/graph2.jpg" alt="graph2"> -->
                 </div>
             </div>
 
@@ -462,6 +463,27 @@
     <script src="../js/chartist.min.js"></script>
     <script src="../js/chartist-plugin-legend.min.js"></script>
     <script src="../js/chartist-plugin-axistitle.min.js"></script>
+
+
+    <script>
+        //График финансовых затрат на будущие цели
+        var labelList = ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028'],
+            dataFirstLine = [null, 0, 10, 21, 24, 46, 60, 63, 70, 100],
+            dataSecondLine = [null, 0, 5, 15, 22, 41, 55, 58, 60, 85],
+            axisTitleX = "год",
+            axisTitleY = "Затраты, млн. руб.";
+
+        //с пиктограмами
+        img1 = '../img/graph-icon2.png',
+            img2 = '../img/graph-icon3.png',
+            img3 = '../img/graph-icon4.png',
+            img4 = '../img/graph-icon5.png',
+            img5 = '../img/graph-icon6.png',
+            dataArr = [2020, 2022, 2024, 2037, 2045],
+            startYear = 2019,
+            lasYear = 2079,
+            divisor = 10
+    </script>
 
     <script src="../js/script.min.js"></script>
     <script src="../js/user-account.min.js"></script>

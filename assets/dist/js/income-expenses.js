@@ -1,12 +1,12 @@
 $(document).ready(function(){
     new Chartist.Line('#chart5', {
-        labels: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+        labels: labelsGraph1,
         series: [{
             name: 'series-1',
-            data: [0, 500, 1000, 1400, 2140, 2200, 2600, 2700, 3000, 3100, 3150, 3300]
+            data: firstDataGraph1
         }, {
             name: 'series-2',
-            data: [0, 300, 700, 900, 1400, 1550, 1700, 1960, 2000, 2410, 2500, 2800]
+            data: secondDataGraph1
         }],
       }, {
         fullWidth: true,
@@ -32,7 +32,7 @@ $(document).ready(function(){
         plugins: [
             Chartist.plugins.ctAxisTitle({
                 axisX: {
-                    axisTitle: "месяц",
+                    axisTitle: axisXGraph1,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
@@ -41,7 +41,7 @@ $(document).ready(function(){
                     textAnchor: "middle"
                 },
                 axisY: {
-                    axisTitle: "тыс. руб.",
+                    axisTitle: axisYGraph1,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
@@ -60,11 +60,7 @@ $(document).ready(function(){
     ]);
 
     new Chartist.Bar('#chart6', {
-        series: [
-            [1600],
-            [700],
-            [700]
-        ]
+        series: dataGraph2
     }, {
         stackBars: true,
         seriesBarDistance: 10,
@@ -77,10 +73,11 @@ $(document).ready(function(){
         axisY: {
           offset: 0
         },
+        high: maxValue,
         plugins: [
             Chartist.plugins.ctAxisTitle({
                 axisX: {
-                    axisTitle: "Доходы за год, тыс. руб.",
+                    axisTitle: axisXGraph2,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
@@ -93,11 +90,7 @@ $(document).ready(function(){
     });
 
     new Chartist.Bar('#chart7', {
-        series: [
-            [1400],
-            [300],
-            [200]
-        ]
+        series: dataGraph3
     }, {
         stackBars: true,
         seriesBarDistance: 10,
@@ -107,13 +100,14 @@ $(document).ready(function(){
         chartPadding: {
             bottom: 50,
         },
+        high: maxValue,
         axisY: {
           offset: 0
         },
         plugins: [
             Chartist.plugins.ctAxisTitle({
                 axisX: {
-                    axisTitle: "Расходы за год, тыс. руб.",
+                    axisTitle: axisXGraph3,
                     axisClass: "ct-axis-title",
                     offset: {
                         x: 0,
@@ -127,25 +121,16 @@ $(document).ready(function(){
 
     // chart8 и chart9 связаны между собой
     new Chartist.Bar('#chart8', {
-        labels: ['С основного места работы', 'Недвижимость', 'Инвестиции'],
+        labels: labelsGraph4,
     
-        // значения задаются следующим образом:
-        //      series: [
-        //          [1000, 200, 100], - тут указывается кол-во поинтов, которые будут закрашены, начиная с начальной точки
-        //          [0, 1000, 1200] - тут указывается начальная точка
-        //      ]
-        //      то есть 1й столбик будет с 0 до 1000, 2й с 1000 до 1200(1000+200), 3й с 1200 до 1300 (1200+100)
-        series: [
-            [1000, 200, 100],
-            [0, 1000, 1200]
-        ]
+        series: dataGraph4
     }, {
         stackBars: true,
         seriesBarDistance: 0,
         reverseData: true,
         fullWidth: true,
-        high: 1300, //максимальное число дохода (100+1200)
-        height: (3 * 33 + 50), // 5 - кол-во столбцов
+        high: maxIncome, 
+        height: gridHeightGraph4,
         horizontalBars: true,
         axisX: {
             showLabel: false
@@ -167,7 +152,7 @@ $(document).ready(function(){
     ]);
 
     new Chartist.Bar('#chart9', {
-        labels: ['Автомобиль', 'Поощрения', 'Кредиты', 'Рента', 'Семья', 'Быт', 'Эмоции', 'Спортзал и здоровье', 'Поддержка и благотворительность'],
+        labels: labelsGraph5,
     
         // значения задаются с учётом того, что отсчет идёт от максимального значения, которое берётся с chart8:
         //      series: [
@@ -175,18 +160,15 @@ $(document).ready(function(){
         //          [1000, 800, 655, 625, 525, 500, 435, 335, 315] - тут указывается начальная точка (отсчет с конца)
         //      ]
         //      то есть 1й столбик будет с 1000 до 1300, 2й с 800 до 1000(800+200), 3й с 655 до 800 (645+155) и тд.
-        series: [
-            [300, 200, 145, 30, 100, 25, 65, 100, 20],
-            [1000, 800, 655, 625, 525, 500, 435, 335, 315]
-        ],
+        series: dataGraph5,
     }, {
         stackBars: true,
         seriesBarDistance: 0,
-        high: 1300, //максимальное число дохода (100+1200)
+        high: maxIncome, 
         reverseData: true,
         horizontalBars: true,
         fullWidth: true,
-        height: (9 * 33 + 50), // 9 - кол-во столбцов
+        height: gridHeightGraph5, 
         axisY: {
           offset: 80,
         }

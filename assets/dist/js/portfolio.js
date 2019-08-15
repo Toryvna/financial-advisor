@@ -1,19 +1,19 @@
 $(document).ready(function(){
     //portfolio graph
     var chart = new Chartist.Line('#chart1', {
-        labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028'],
+        labels: labelsLine,
         series: [{
         name: 'series-1',
-            data: [0, 21, 34, 44, 60, 80, 100],
+            data: dataLine1,
         }, {
         name: 'series-2',
-            data: [0, 15, 19, 30, 40, 50, 70, 80, 100]
+            data: dataLine2
         }, {
         name: 'series-3',
-            data: [null, 0, 10, 21, 24, 46, 60, 63, 70, 100]
+            data: dataLine3
         }, {
         name: 'series-4',
-            data: [null, 0, 5, 15, 22, 41, 55, 58, 60, 85]
+            data: dataLine4
         }],
     }, {
     fullWidth: true,
@@ -42,13 +42,13 @@ $(document).ready(function(){
     },
     plugins: [
         Chartist.plugins.legend({
-            legendNames: ['- потенциальный доход', '- остаток', '- затрати на цели', '- line4 '],
+            legendNames: legendNames,
             position: 'bottom',
             clickable: false
         }),
         Chartist.plugins.ctAxisTitle({
             axisX: {
-                axisTitle: "год",
+                axisTitle: axisX,
                 axisClass: "ct-axis-title",
                 offset: {
                     x: 0,
@@ -57,7 +57,7 @@ $(document).ready(function(){
                 textAnchor: "middle"
             },
             axisY: {
-                axisTitle: "тыс. руб.",
+                axisTitle: axisY,
                 axisClass: "ct-axis-title",
                 offset: {
                     x: 0,
@@ -67,7 +67,7 @@ $(document).ready(function(){
             }
         }),
         Chartist.plugins.ctGoalLine({
-          value: 40,
+          value: linePoint,
           axis: 'x'
         })
     ] }, 
@@ -98,7 +98,7 @@ $(document).ready(function(){
             x2: targetLineX,
             y1: context.chartRect.y1,
             y2: context.chartRect.y2,
-            'xlink:href': '../img/graph-icon1.png'
+            'xlink:href': iconUrl
         });
     });
     

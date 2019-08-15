@@ -2,13 +2,13 @@ $(document).ready(function(){
 
     // user-account graph
     new Chartist.Line('#chart2', {
-        labels: ['2019', '2020', '2021', '2022', '2023', '2024', '2025', '2026', '2027', '2028'],
+        labels: labelList,
         series: [{
           name: 'series-1',
-          data: [null, 0, 10, 21, 24, 46, 60, 63, 70, 100]
+          data: dataFirstLine
         }, {
           name: 'series-2',
-          data: [null, 0, 5, 15, 22, 41, 55, 58, 60, 85]
+          data: dataSecondLine
         }],
     }, {
     fullWidth: true,
@@ -32,7 +32,7 @@ $(document).ready(function(){
     plugins: [
         Chartist.plugins.ctAxisTitle({
             axisX: {
-                axisTitle: "год",
+                axisTitle: axisTitleX,
                 axisClass: "ct-axis-title",
                 offset: {
                     x: 0,
@@ -41,7 +41,7 @@ $(document).ready(function(){
                 textAnchor: "middle"
             },
             axisY: {
-                axisTitle: "Затраты, млн. руб.",
+                axisTitle: axisTitleY,
                 axisClass: "ct-axis-title",
                 offset: {
                     x: 0,
@@ -69,4 +69,78 @@ $(document).ready(function(){
         }]
     ]);
 
+
+    new Chartist.Line('#chart3', {
+        series: [
+          {
+            name: 'series-1',
+            meta: {
+                imageUrl: img1
+            },
+            data: [
+              {x: dataArr[0], y: 1},
+            ]
+          },
+          {
+            name: 'series-2',
+            meta: {
+                imageUrl: img2
+            },
+            data: [
+              {x: dataArr[1], y: 1},
+            ]
+          },
+          {
+            name: 'series-3',
+            meta: {
+                imageUrl: img3
+            },
+            data: [
+              {x: dataArr[2], y: 1},
+            ]
+          },
+          {
+            name: 'series-4',
+            meta: {
+                imageUrl: img4
+            },
+            data: [
+              {x: dataArr[3], y: 1},
+            ]
+          },
+          {
+            name: 'series-5',
+            meta: {
+                imageUrl: img5
+            },
+            data: [
+              {x: dataArr[4], y: 1},
+            ]
+          }
+        ]
+      }, {
+        axisX: {
+          type: Chartist.FixedScaleAxis,
+          divisor: divisor,
+          low: startYear,
+          high: lasYear,
+          onlyInteger: true,
+        },
+        axisY: {
+            low: 0,
+            high: 2,
+            showLabel: false,
+        }
+      }).on('draw', function(context) {
+            if (context.type === 'point') {
+              context.element.replace(new Chartist.Svg('image', {
+                height: 32,
+                width: 32,
+                x: context.x - (32 / 2),
+                y: context.y - (32 / 2),
+                'xlink:href': context.series.meta.imageUrl
+              }));
+            }
+        });
+      
 });

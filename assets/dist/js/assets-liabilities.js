@@ -1,9 +1,6 @@
 $(document).ready(function(){
     new Chartist.Bar('#chart3', {
-        series: [
-            [11, 5, 4, 4, 3],
-            [-3, 0, 0, 0, 0]
-        ]
+        series: dataLine
     }, {
         reverseData: true,
         horizontalBars: true,
@@ -20,16 +17,13 @@ $(document).ready(function(){
     },
     [
         ['screen and (min-width: 768px)', {
-            high: 16,
-            low: -16,
+            high: maxValue,
+            low: lowValue,
         }]
     ]);
 
     new Chartist.Bar('#chart4', {
-        series: [
-            [11],
-            [0]
-        ]
+        series: dataLineGraph2
     }, {
         reverseData: true,
         horizontalBars: true,
@@ -44,6 +38,12 @@ $(document).ready(function(){
             offset: 0,
             showLabel: false,
         },
-    });
+    },
+    [
+        ['screen and (min-width: 768px)', {
+            high: maxValue,
+            low: lowValue,
+        }]
+    ]);
 
 });
