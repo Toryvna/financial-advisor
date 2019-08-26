@@ -142,5 +142,12 @@ $(document).ready(function(){
               }));
             }
         });
+
+    //показть форму для добавления поля
+    $('.addMore').on('click', function(){
+        $(this).parent().parent().find('.addForm').show();
+        
+        $(this).hide()
+    });
       
 });

@@ -46,4 +46,12 @@ $(document).ready(function(){
         }]
     ]);
 
+
+    //показть форму для добавления поля
+    $('.addMore').on('click', function(){
+        $(this).parent().prev('.addForm').show();
+        
+        $(this).hide()
+    });
+
 });
